@@ -1,0 +1,15 @@
+POST http://127.0.0.1:5000/student/signup
+content-type: application/json
+
+{
+    "name":"prx",
+    "email":"prx@xyz.com",
+    "phone":"7689789875",
+    "username":"test",
+    "password":"test@1209"
+}
+###
+
+GET http://localhost:5000/student/dispStudent
+
+
