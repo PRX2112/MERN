@@ -19,4 +19,15 @@ router.get('/dispStudent',async (req,res)=>{
     res.json(data)
 })
 
+//delete data
+router.delete('/delete/:id',async (req,res)=>{
+    try {
+        const id=req.params.id
+        alert(id)
+        const data=await signupinfo.findByIdAndDelete(id)
+        res.send('Student data deleted')
+    }catch(error){
+        res.json({message:error.message})
+    }
+})
 module.exports=router

@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 export const Login = () => {
+    let navigate=useNavigate()
     const [username,setUsername]=useState('')
     const [password,setPassword]=useState('')
     const handleUserChange=(e)=>{
@@ -20,6 +22,8 @@ export const Login = () => {
             alert(logindata.name)
             if(logindata.name){
                 localStorage.setItem("login",JSON.stringify(logindata))
+                navigate('/',{replace:true})
+                navigate(0)
             }else{
                 alert("Login Failed")
             }
