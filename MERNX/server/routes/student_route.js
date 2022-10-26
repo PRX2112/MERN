@@ -14,6 +14,7 @@ router.post('/signup',(req,res)=>{
     signupentry.save()
 })
 
+//display data
 router.get('/dispStudent',async (req,res)=>{
     const data =await signupinfo.find()
     res.json(data)
